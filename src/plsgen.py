@@ -191,8 +191,8 @@ def table_gen(NPLS, fpath=None):
     rtime_wood = np.random.uniform(0.08333333333333333, 150.0, r_ceil)
     while index1 < diffw:
         restime = np.zeros(shape=(3,), dtype=np.float64)
-        dwood = np.random.uniform(0.5, 0.9, NPLS)
-        sla_var = np.random.uniform(0.009, 0.040, NPLS)
+        dwood = np.random.uniform(0.17, 1.25, NPLS)
+        sla_var = np.random.uniform(0.0026, 0.0390, NPLS)
         allocatio = plsa_wood[np.random.randint(0, plsa_wood.shape[0])]
         restime[0] = rtime[np.random.randint(0, r_ceil)]
         restime[1] = rtime_wood[np.random.randint(0, r_ceil)]
@@ -227,7 +227,7 @@ def table_gen(NPLS, fpath=None):
     # # C : N : P
 
     leaf = np.array(sample(calc_ratios('leaf'), int(NPLS)))
-    leaf_n2c = leaf[:, 0]
+    leaf_n2c = np.random.uniform(0.017, 0.118, NPLS)
     leaf_p2c = leaf[:, 1]
 
     wood = np.array(sample(calc_ratios('wood'), int(NPLS)))
